@@ -1,13 +1,13 @@
-/** gets current date and time and displays it on page */
+/** date and time displayed */
 
-const now = new Date($.now())
-const todayDate = moment(now).format("dddd, MMMM Do, h:mm a z")
-const currentHour = moment(now).format("H")
+let now = new Date($.now())
+let todayDate = moment(now).format("dddd, MMMM Do, h:mm a z")
+let currentHour = moment(now).format("H")
 $("#currentDay").append(todayDate)
 
-/** creates html to show time rows */
-const myHTML = []
-/** function to write the html */
+/** creates rows */
+let myHTML = []
+
 function createHTML() {
   let time = 0
   let timeLetters
@@ -42,7 +42,7 @@ createHTML()
 /** adds the html to page */
 $(".container").append(myHTML.join(""))
 
-/** adds conditional styling to rows */
+/** styling to rows */
 $(".row").each(function (index, value) {
   // console.log(this.id)
   if (parseInt(this.id) == currentHour) {
@@ -54,7 +54,7 @@ $(".row").each(function (index, value) {
   }
 })
 
-/** saves users input event to local storage */
+/** saves event to local storage */
 $(".saveBtn").on("click", function () {
   var event = $(this).siblings(".description").val()
   var time = $(this).parent().attr("id")
@@ -63,8 +63,8 @@ $(".saveBtn").on("click", function () {
   $("#event-notification").text(`"${event}" was added to local storage ✅`)
 })
 
-/** gets users events from local storage to display */
-const renderEvents = () => {
+/** shows users events from local storage */
+let renderEvents = () => {
   for (let i = 5; i < 24; i++) {
     $(`#${i} .description`).val(localStorage.getItem(`${i}`))
   }
