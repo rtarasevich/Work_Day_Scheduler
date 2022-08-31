@@ -27,3 +27,6 @@ WHEN I refresh the page
 THEN the saved events persist
 
 
+![Screen Shot 2022-08-30 at 4 33 08 PM](https://user-images.githubusercontent.com/103225576/187568969-d9d12136-ded4-49ab-8bb7-c4c86701501a.png)
+
+Link to website url: file:///Users/robintarasevich/Desktop/repos/Work_Day_Scheduler/index.html 
